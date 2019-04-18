@@ -1,5 +1,6 @@
 package selenium;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,10 +9,12 @@ import org.testng.annotations.Test;
  {
 
  @Test
- publicvoidtestgooglrsearch()
+ public static void testgooglrsearch()
  {
 	 
-WebDriver driver = newFirefoxDriver();
+	 
+System.setProperty("webdriver.chrome.driver", "C:\\dev files\\drivers\\chromedriver.exe")	 ;
+WebDriver driver = new ChromeDriver();
 //it will open the goggle page
 driver.get("http://google.in");
 //we expect the title “Google “ should be present
@@ -25,6 +28,6 @@ Assert.assertEquals(Actualtitle, Expectedtitle);
 System.out.println("After Assertion " + Expectedtitle + Actualtitle + " Title matched ");
  }
 }
-public class Test {
+/*public class Test {
 
-}
+}*/
